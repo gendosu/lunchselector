@@ -1,0 +1,29 @@
+<div>シャッフル</div>
+<% p @shuffle.errors if @shuffle %>
+<% if @shuffle and @shuffle.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@shuffle.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+    <ul>
+    <% @shuffle.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @shuffle, url: root_path do |f| %>
+  <%= f.text_field :member_count %>
+
+  <%= f.submit '選出' %>
+<%- end -%>
+
+<%- @users.each do |user| -%>
+  <div><%= user.name %></div>
+<%- end unless @users.blank? -%>
+<br/>
+メンバー管理
+<ul>
+<li><%= link_to 'メンバー一覧', users_path %></li>
+<li><%= link_to 'メンバー追加', new_user_path %></li>
+</ul>
