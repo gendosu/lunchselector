@@ -19,7 +19,7 @@
 <%- end -%>
 
 <%- @users.each do |user| -%>
-  <div><%= user.name %></div>
+  <div><%= user.id %>&nbsp;:&nbsp;<%= user.name %></div>
 <%- end unless @users.blank? -%>
 <br/>
 メンバー管理

@@ -12,7 +12,7 @@ class TopController < ApplicationController
     if request.post?
       shuffle_params = params.require(:top_controller_shuffle).permit(:member_count)
 
-      @users = User.all.limit(shuffle_params[:member_count])
+      @users = User.all.where('rand()').limit(shuffle_params[:member_count])
     else
     end
   end
