@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+class Array
+  def choice
+    at( rand( size ) )
+  end
+end
+
+1.upto(50) do |abc|
+  User.create( { name: ['gorira', 'koara', 'pantu', 'women'].choice, })
+end
