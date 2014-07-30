@@ -3,29 +3,34 @@
   <li class="active"><%= link_to 'メンバー管理', users_path %></li>
 <%- end -%>
 
-  <h1>Listing users</h1>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Listing users</div>
+  <div class="panel-body">
+    <p style="text-align: center;">メンバーの一覧を管理します</p>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
+  <!-- Table -->
+  <table class="table" style="width: 50%; margin-left: auto; margin-right: auto;">
+    <thead>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th style="text-align: right;">Action</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td style="text-align: right;"><%= link_to 'Show', user %>|
+          <%= link_to 'Edit', edit_user_path(user) %>|
+          <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 

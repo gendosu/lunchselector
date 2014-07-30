@@ -1,3 +1,7 @@
+<%- content_for :stylesheets do -%>
+  <link href="starter-template.css" rel="stylesheet">
+<%- end -%>
+  
 <%- content_for :navvar do -%>
   <li class="active"><%= link_to 'Home', root_path %></li>
   <li class=""><%= link_to 'メンバー管理', users_path %></li>
