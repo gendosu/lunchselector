@@ -13,9 +13,9 @@
 <% end %>
 
 <%= form_for @shuffle, url: root_path do |f| %>
-  <%= f.text_field :member_count %>
+  <%= f.select :member_count, [[2,2], [3,3], [4,4], [5,5], [6,6]], class: "form-control" %>
 
-  <%= f.submit '選出' %>
+  <%= f.submit '選出', class: "btn btn-xs btn-default" %>
 <%- end -%>
 
 <%- @users.each do |user| -%>
