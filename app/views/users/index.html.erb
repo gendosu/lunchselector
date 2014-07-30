@@ -1,4 +1,9 @@
-<h1>Listing users</h1>
+<%- content_for :navvar do -%>
+  <li class=""><%= link_to 'Home', root_path %></li>
+  <li class="active"><%= link_to 'メンバー管理', users_path %></li>
+<%- end -%>
+
+  <h1>Listing users</h1>
 
 <table>
   <thead>

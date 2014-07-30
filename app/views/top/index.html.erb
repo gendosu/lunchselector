@@ -1,3 +1,11 @@
+<%- content_for :navvar do -%>
+  <li class="active"><%= link_to 'Home', root_path %></li>
+  <li class=""><%= link_to 'メンバー管理', users_path %></li>
+<%- end -%>
+
+<h1>ランチセレクター</h1>
+<p class="lead">ランチに一緒に行くメンバーを選出します。<br>行きたいメンバーの人数を選んで、選出ボタンを押してください。</p>
+
 <div>シャッフル</div>
 <% p @shuffle.errors if @shuffle %>
 <% if @shuffle and @shuffle.errors.any? %>
