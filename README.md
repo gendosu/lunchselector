@@ -7,10 +7,12 @@
 ### What is this repository for? ###
 
 * Quick summary
-ランチに行くメンバーをランダムで選んでくれます。
+
+	ランチに行くメンバーをランダムで選んでくれます。
 
 * Version
-0.0.1
+
+	0.0.1
 
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
