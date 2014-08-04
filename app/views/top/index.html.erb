@@ -1,12 +1,13 @@
 <%- content_for :stylesheets do -%>
-  <link href="starter-template.css" rel="stylesheet">
+  <!--<link href="starter-template.css" rel="stylesheet">-->
 <%- end -%>
-  
+
 <%- content_for :navvar do -%>
   <li class="active"><%= link_to 'Home', root_path %></li>
   <li class=""><%= link_to 'メンバー管理', users_path %></li>
 <%- end -%>
 
+<div class="starter-template">
 <h1>ランチセレクター</h1>
 <p class="lead">ランチに一緒に行くメンバーを選出します。<br>行きたいメンバーの人数を選んで、選出ボタンを押してください。</p>
 
@@ -17,9 +18,9 @@
     <h2><%= pluralize(@shuffle.errors.count, "error") %> prohibited this user from being saved:</h2>
 
     <ul>
-    <% @shuffle.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
+      <% @shuffle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
     </ul>
   </div>
 <% end %>
@@ -30,6 +31,24 @@
   <%= f.submit '選出', class: "btn btn-xs btn-default" %>
 <%- end -%>
 
-<%- @users.each do |user| -%>
-  <div><%= user.id %>&nbsp;:&nbsp;<%= user.name %></div>
-<%- end unless @users.blank? -%>
+<!-- Table -->
+<%- unless @users.blank? -%>
+<table class="table" style="width: 50%; margin-left: auto; margin-right: auto;">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%- @users.each do |user| -%>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+      </tr>
+    <%- end -%>
+  </tbody>
+</table>
+<%- end -%>
+</div>
