@@ -10,6 +10,7 @@ class TopController < ApplicationController
     @shuffle = Shuffle.new(params[:top_controller_shuffle])
 
     if request.post?
+      a = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
       shuffle_params = params.require(:top_controller_shuffle).permit(:member_count)
 
       @users = User.all.where('rand()').limit(shuffle_params[:member_count])
